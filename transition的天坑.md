@@ -120,13 +120,13 @@ window.onload触发的条件是浏览器不但解析完代码，而且还渲染�
 
 在window.onload之后执行浏览器的第一次渲染。
 一开始dom树节点就没有这个节点，是后来塞进去的。因此在浏览器解析完代码后，在内存中第一次储存的值是100px，第二次为200px，二者是同步的。浏览器从内存中得到的值直接就为200px。也就没有过渡动画。
-    <script>
-    window.onload=function () {
+     <script>
+      window.onload=function () {
         var outer = document.createElement('div');
         outer.id='outer';
         document.documentElement.appendChild(outer);
         outer.style.width='200px'
-    }
-    </script>
+     }
+     </script>
 ## 天坑4 ##   
  在绝大部分变换样式切换时，若变换函数的位置，个数不相同，也不会触发过渡。
